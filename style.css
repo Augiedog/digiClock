@@ -1,0 +1,49 @@
+@font-face {  font-family: "FX_LED";  src: url("https://cdn.jsdelivr.net/gh/codetheworld-io/static-files/FX-LED.TTF");  }
+@font-face {  font-family: "hack";  src: url("https://cdn.jsdelivr.net/gh/codetheworld-io/static-files/Hack-Bold.ttf");  }
+html,
+body {
+    margin: 0;
+    padding: 0;
+    background: #000000;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.digiClock {
+    background-color: #000;
+    color: #fff;
+    display: flex;
+    border-radius: 2rem;
+    user-select: none;
+    padding: 0 2rem;
+    border: 0.5rem solid #2d2d2d;
+    white-space: nowrap;
+}
+.digiClock .week {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 3rem;
+    color: #2d2d2d;
+    font-weight: bold;
+    font-family: "hack";
+}
+.digiClock .week .active {
+    color: white;
+}
+.digiClock .time {
+    font-family: "FX_LED";
+}
+.digiClock .time .hour,
+.digiClock .time .min,
+.digiClock .time .dot {
+    display: inline-block;
+    font-size: 13rem;
+}
+.digiClock .time .invsi {
+    visibility: hidden;
+}
