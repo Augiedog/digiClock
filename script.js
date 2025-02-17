@@ -16,7 +16,7 @@ function update() {
     } else {
         dot.classList.remove('invsi');
     }
-    hour.textContent = String("0"+now.getHours() % 12 || 12).padStart(2, '0').slice(-1);
+    hour.textContent = String(now.getHours() % 12 || 12).padStart(2, '0');
     min.textContent = String(now.getMinutes()).padStart(2, '0');
 
     Array
