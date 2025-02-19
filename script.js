@@ -5,7 +5,12 @@ const hour = $('.hour');
 const dot = $('.dot');
 const min = $('.min');
 const week = $('.week');
+const hrSwitch = $('.checkbox');
 let showDot = true;
+let toggle = true;
+addEventListener('change', () => {
+    toggle = !toggle;
+})
 
 function update() {
     showDot = !showDot;
@@ -16,7 +21,12 @@ function update() {
     } else {
         dot.classList.remove('invsi');
     }
-    hour.textContent = String(now.getHours() % 12 || 12).padStart(2, '0');
+
+    if (toggle) {
+        hour.textContent = String(now.getHours() % 12 || 12).padStart(2, '0');
+    } else {
+        hour.textContent = String(now.getHours()).padStart(2, '0');
+    }
     min.textContent = String(now.getMinutes()).padStart(2, '0');
 
     Array
