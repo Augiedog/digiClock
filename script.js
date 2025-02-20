@@ -15,7 +15,7 @@ addEventListener('change', () => {
 function update() {
     showDot = !showDot;
     const now = new Date();
-
+    // console.log(">>-->",now)
     if (showDot) {
         dot.classList.add('invsi');
     } else {
@@ -37,7 +37,7 @@ function update() {
             }
         );
     week
-        .children[now.getDay()]
+        .children[now.getDay(console.log)]
         .classList
         .add('active');
 };

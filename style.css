@@ -50,6 +50,7 @@ body {
 .hrSwitch {
     display: flex;
     flex-direction: column;
+    padding-top: 0.5rem;
     justify-content: end;
     align-items: center;
     width: 7rem;
@@ -57,8 +58,8 @@ body {
 .switch {
     position: relative;
     display: inline-block;
-    width: 60px;
-    height: 34px;
+    width: 57px;
+    height: 32px;
   }
 .slider {
     position: absolute;
@@ -83,7 +84,7 @@ body {
     transition: .4s;
   }
   input:checked + .slider {
-    background-color: #2196F3;
+    background-color: #2d2d2d;
   }
   input:checked + .slider:before {
     -webkit-transform: translateX(26px);
