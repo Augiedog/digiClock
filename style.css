@@ -47,6 +47,7 @@ body {
 .digiClock .time .invsi {
     visibility: hidden;
 }
+/* The Toggle Switch */
 .hrSwitch {
     display: flex;
     flex-direction: column;
@@ -55,46 +56,53 @@ body {
     align-items: center;
     width: 7rem;
 }
-.switch {
-    position: relative;
-    display: inline-block;
-    width: 57px;
-    height: 32px;
-  }
-.slider {
-    position: absolute;
-    cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #ccc;
-    -webkit-transition: .4s;
-    transition: .4s;
-  }
-  .slider:before {
-    position: absolute;
-    content: "";
-    height: 26px;
-    width: 26px;
-    left: 4px;
-    bottom: 4px;
-    background-color: white;
-    -webkit-transition: .4s;
-    transition: .4s;
-  }
-  input:checked + .slider {
-    background-color: #2d2d2d;
-  }
-  input:checked + .slider:before {
-    -webkit-transform: translateX(26px);
-    -ms-transform: translateX(26px);
-    transform: translateX(26px);
-  }
-  .slider.round {
-    border-radius: 34px;
-  }
-  
-  .slider.round:before {
-    border-radius: 50%;
-  }
+.toggleContainer {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  width: fit-content;
+  border: 3px solid #343434;
+  border-radius: 20px;
+  background: #343434;
+  font-weight: bold;
+  font-family: "FX_LED";
+  color: #343434;
+  cursor: pointer;
+}
+.toggleContainer::before {
+  content: '';
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  left: 0%;
+  border-radius:20px;
+  background: white;
+  transition: all 0.3s;
+}
+.toggleCheckbox:checked + .toggleContainer::before {
+   left: 50%;
+}
+.toggleContainer div {
+  padding: 6px;
+  text-align: center;
+  z-index: 1;
+}
+.toggleCheckbox {
+  display: none;
+}
+.toggleCheckbox:checked + .toggleContainer div:first-child{
+  color: white;
+  transition: color 0.3s;
+}
+.toggleCheckbox:checked + .toggleContainer div:last-child{
+  color: #343434;
+  transition: color 0.3s;
+}
+.toggleCheckbox + .toggleContainer div:first-child{
+  color: #343434;
+  transition: color 0.3s;
+}
+.toggleCheckbox + .toggleContainer div:last-child{
+  color: white;
+  transition: color 0.3s;
+}

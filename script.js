@@ -37,7 +37,7 @@ function update() {
             }
         );
     week
-        .children[now.getDay(console.log)]
+        .children[now.getDay()]
         .classList
         .add('active');
 };
